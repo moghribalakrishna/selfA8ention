@@ -1,0 +1,194 @@
+{
+  "title": "Same Table, Every Round",
+  "quote": { "text": "Play long-term games with long-term people.", "author": "Naval Ravikant" },
+  "cast": [
+    { "id": "mia", "name": "Mia", "color": "#e76f51" },
+    { "id": "sam", "name": "Sam", "color": "#2a9d8f" },
+    { "id": "lee", "name": "Lee", "color": "#8d99ae" },
+    { "id": "kai", "name": "Kai", "color": "#b5838d" },
+    { "id": "ravi", "name": "Ravi", "color": "#3a86ff" },
+    { "id": "ana", "name": "Ana", "color": "#ffbe0b" },
+    { "id": "jo", "name": "Jo", "color": "#8338ec" },
+    { "id": "you", "name": "You", "color": "#06d6a0" }
+  ],
+  "scenes": [
+    {
+      "beat": "hook",
+      "duration": 6,
+      "mood": "tension",
+      "shot": "top_down",
+      "narration": "Mia can take seventy tonight instead of fifty. Nobody would know.",
+      "caption": "Round 1",
+      "entities": [
+        { "id": "round", "kind": "round_marker", "x": 0, "z": 0, "label": "Round", "value": 1 },
+        { "id": "mia", "kind": "figure", "cast": "mia", "x": -1.6, "z": 1.5 },
+        { "id": "sam", "kind": "figure", "cast": "sam", "x": 1.6, "z": 1.5 },
+        { "id": "deal", "kind": "coin_pile", "x": 0, "z": -0.8, "value": 50, "label": "Mia's cut" }
+      ],
+      "events": [
+        { "t": 1.8, "target": "deal", "action": "grow", "value": 70, "over": 1.6 },
+        { "t": 3.8, "target": "mia", "action": "pulse" },
+        { "t": 4.2, "target": "deal", "action": "glow", "over": 0.8 }
+      ]
+    },
+    {
+      "beat": "rule",
+      "duration": 8,
+      "mood": "tension",
+      "shot": "push_in",
+      "focus": "rule",
+      "narration": "She thinks of every deal as its own game. Win this one, then move on to the next.",
+      "caption": "Every deal is its own game",
+      "entities": [
+        { "id": "round", "kind": "round_marker", "x": 0, "z": 0, "label": "Round", "value": 1 },
+        { "id": "mia", "kind": "figure", "cast": "mia", "x": -1.6, "z": 1.5 },
+        { "id": "sam", "kind": "figure", "cast": "sam", "x": 1.6, "z": 1.5 },
+        { "id": "rule", "kind": "contract_card", "x": 0, "z": -1.5, "text": "One deal, one game." }
+      ],
+      "events": [
+        { "t": 0.6, "target": "rule", "action": "appear", "over": 0.8 },
+        { "t": 3.4, "target": "rule", "action": "lock" },
+        { "t": 5.5, "target": "mia", "action": "pulse" }
+      ]
+    },
+    {
+      "beat": "choice",
+      "duration": 10,
+      "mood": "tension",
+      "shot": "wide",
+      "narration": "Two ways to play it. She takes the quick win. And it works.",
+      "caption": "+20 tonight",
+      "entities": [
+        { "id": "round", "kind": "round_marker", "x": 0, "z": 0, "label": "Round", "value": 1 },
+        { "id": "coins", "kind": "counter", "x": 0, "z": 0, "label": "Mia", "value": 50 },
+        { "id": "short", "kind": "path", "x": -0.6, "z": 3.5, "to_x": -3.4, "to_z": -0.5, "label": "now" },
+        { "id": "long", "kind": "path", "x": 0.6, "z": 3.5, "to_x": 3.4, "to_z": -6.5, "label": "later" },
+        { "id": "mia", "kind": "figure", "cast": "mia", "x": 0, "z": 4.8 },
+        { "id": "sam", "kind": "figure", "cast": "sam", "x": 2.4, "z": 4.6 },
+        { "id": "stash", "kind": "coin_pile", "x": -3.4, "z": -1.6, "value": 50 }
+      ],
+      "events": [
+        { "t": 0.5, "target": "short", "action": "glow", "over": 1 },
+        { "t": 0.5, "target": "long", "action": "gray_out", "over": 1 },
+        { "t": 2.2, "target": "mia", "action": "walk_to", "x": -3.1, "z": -0.1, "over": 3.2 },
+        { "t": 5.6, "target": "stash", "action": "grow", "value": 70, "over": 1.2 },
+        { "t": 5.6, "target": "coins", "action": "grow", "value": 70, "over": 1.2 },
+        { "t": 6.2, "target": "mia", "action": "celebrate" },
+        { "t": 7.8, "target": "sam", "action": "gray_out", "over": 1.5 }
+      ]
+    },
+    {
+      "beat": "consequence",
+      "duration": 15,
+      "mood": "cold",
+      "shot": "orbit",
+      "focus": "mia",
+      "narration": "Round two needs a new partner. So does round three. Every game starts again from zero, and every restart costs her.",
+      "caption": "Trust: 0 · 0 · 0",
+      "entities": [
+        { "id": "round", "kind": "round_marker", "x": 0, "z": 0, "label": "Round", "value": 1 },
+        { "id": "trust", "kind": "counter", "x": 0, "z": 0, "label": "Trust", "value": 0 },
+        { "id": "mia", "kind": "figure", "cast": "mia", "x": -1.6, "z": 1.5 },
+        { "id": "stash", "kind": "coin_pile", "x": -3.2, "z": -0.6, "value": 70 },
+        { "id": "energy", "kind": "energy_bar", "x": -1.6, "z": 1.5, "label": "Energy", "value": 1 },
+        { "id": "sam", "kind": "figure", "cast": "sam", "x": 1.6, "z": 1.5 },
+        { "id": "lee", "kind": "figure", "cast": "lee", "x": 1.6, "z": 1.5 },
+        { "id": "kai", "kind": "figure", "cast": "kai", "x": 1.6, "z": 1.5 }
+      ],
+      "events": [
+        { "t": 0.3, "target": "sam", "action": "gray_out", "over": 0.5 },
+        { "t": 0.8, "target": "world", "action": "time_skip", "over": 2.6 },
+        { "t": 1.2, "target": "sam", "action": "walk_to", "x": 4.5, "z": -7, "over": 2.4 },
+        { "t": 3.4, "target": "sam", "action": "disappear", "over": 0.5 },
+        { "t": 2.2, "target": "round", "action": "set", "value": 2 },
+        { "t": 4.2, "target": "lee", "action": "appear" },
+        { "t": 4.6, "target": "trust", "action": "pulse" },
+        { "t": 2.5, "target": "energy", "action": "grow", "value": 0.2, "over": 11.5 },
+        { "t": 2.5, "target": "stash", "action": "grow", "value": 86, "over": 11 },
+        { "t": 6.4, "target": "round", "action": "set", "value": 3 },
+        { "t": 7.4, "target": "lee", "action": "gray_out", "over": 0.6 },
+        { "t": 8.0, "target": "lee", "action": "disappear", "over": 0.6 },
+        { "t": 8.8, "target": "kai", "action": "appear" },
+        { "t": 9.2, "target": "trust", "action": "pulse" },
+        { "t": 10.4, "target": "round", "action": "set", "value": 6 },
+        { "t": 12.2, "target": "round", "action": "set", "value": 9 },
+        { "t": 12.6, "target": "mia", "action": "collapse", "over": 1.2 }
+      ]
+    },
+    {
+      "beat": "reveal",
+      "duration": 15,
+      "mood": "dawn",
+      "shot": "pull_back",
+      "focus": "ravi",
+      "narration": "Across the table, Ravi has played with the same three people since round one. His rounds add up. Hers keep resetting.",
+      "caption": "Same people. It compounds.",
+      "entities": [
+        { "id": "round", "kind": "round_marker", "x": 0, "z": 0, "label": "Round", "value": 9 },
+        { "id": "mult", "kind": "counter", "x": 0, "z": 0, "label": "Ravi's trust", "value": 1 },
+        { "id": "ravi", "kind": "figure", "cast": "ravi", "x": 2.4, "z": -2.4 },
+        { "id": "ana", "kind": "figure", "cast": "ana", "x": 1.0, "z": -3.4 },
+        { "id": "jo", "kind": "figure", "cast": "jo", "x": 3.8, "z": -3.6 },
+        { "id": "ravi_stack", "kind": "block_stack", "x": 2.4, "z": -5.4, "value": 4, "color": "#4cc9f0" },
+        { "id": "x", "kind": "multiplier", "x": 0.4, "z": -5.6, "value": 1 },
+        { "id": "mia", "kind": "figure", "cast": "mia", "x": -2.6, "z": 3.4 },
+        { "id": "stash", "kind": "coin_pile", "x": -3.2, "z": 1.6, "value": 86 },
+        { "id": "kai", "kind": "figure", "cast": "kai", "x": -1.0, "z": 3.6 }
+      ],
+      "events": [
+        { "t": 0.4, "target": "kai", "action": "gray_out", "over": 1 },
+        { "t": 2.5, "target": "ravi_stack", "action": "grow", "value": 30, "over": 9 },
+        { "t": 3.5, "target": "x", "action": "set", "value": 2 },
+        { "t": 3.5, "target": "x", "action": "pulse" },
+        { "t": 3.5, "target": "mult", "action": "set", "value": 2 },
+        { "t": 6.5, "target": "x", "action": "set", "value": 4 },
+        { "t": 6.5, "target": "x", "action": "pulse" },
+        { "t": 6.5, "target": "mult", "action": "set", "value": 4 },
+        { "t": 9.5, "target": "x", "action": "set", "value": 8 },
+        { "t": 9.5, "target": "x", "action": "pulse" },
+        { "t": 9.5, "target": "mult", "action": "set", "value": 8 },
+        { "t": 9.8, "target": "ravi", "action": "level_up", "text": "SAME TABLE ×8" },
+        { "t": 11.5, "target": "ravi_stack", "action": "glow", "over": 1 },
+        { "t": 12, "target": "ravi", "action": "celebrate" }
+      ]
+    },
+    {
+      "beat": "quote",
+      "duration": 8,
+      "mood": "warm",
+      "shot": "wide",
+      "narration": "Play long-term games with long-term people.",
+      "caption": "",
+      "entities": [
+        { "id": "ravi", "kind": "figure", "cast": "ravi", "x": 2.4, "z": -2.4 },
+        { "id": "ana", "kind": "figure", "cast": "ana", "x": 1.0, "z": -3.4 },
+        { "id": "jo", "kind": "figure", "cast": "jo", "x": 3.8, "z": -3.6 },
+        { "id": "ravi_stack", "kind": "block_stack", "x": 2.4, "z": -5.4, "value": 30, "color": "#4cc9f0" },
+        { "id": "mia", "kind": "figure", "cast": "mia", "x": -2.6, "z": 3.4 },
+        { "id": "stash", "kind": "coin_pile", "x": -3.2, "z": 1.6, "value": 86 }
+      ],
+      "events": [
+        { "t": 0.5, "target": "ravi_stack", "action": "glow", "over": 1.5 },
+        { "t": 0.5, "target": "stash", "action": "gray_out", "over": 1.5 }
+      ]
+    },
+    {
+      "beat": "mirror",
+      "duration": 5,
+      "mood": "dawn",
+      "shot": "close",
+      "focus": "you",
+      "narration": "So who will still be at your table in round nine?",
+      "caption": "Who are your long-term people?",
+      "entities": [
+        { "id": "round", "kind": "round_marker", "x": 0, "z": 0, "text": "Round ∞" },
+        { "id": "you", "kind": "figure", "cast": "you", "x": 0, "z": 1 },
+        { "id": "seat", "kind": "path", "x": 0, "z": 1.8, "to_x": 0, "to_z": -4 }
+      ],
+      "events": [
+        { "t": 0.3, "target": "you", "action": "appear", "over": 0.8 },
+        { "t": 1.2, "target": "seat", "action": "glow", "over": 1.5 }
+      ]
+    }
+  ]
+}
